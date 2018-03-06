@@ -1,4 +1,6 @@
 ﻿#include "CImg.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 int main()
 {
@@ -14,5 +16,12 @@ int main()
 	img.fill(255, 255, 255);                                 // img.fill((255, 255, 255))                   // рис.заполнить((255, 255, 255))
 	unsigned char black_color[3] = {0, 0, 0};
 	img.draw_circle(512, 512, 256, black_color, 1, 0);       // img.draw_circle((512, 512), 256, (0, 0, 0)) // рис.нарисовать_круг((512, 512), 256, (0, 0, 0))
+	for (int i=0; i<24; i++) {
+		char t[3];
+		float angle = float((i+0.5)*2*M_PI/24.0);
+		img.draw_text(512+int(sin(angle)*200),
+			          512+int(-cos(angle)*200),
+					  (_itoa_s(i, t, 10), t), black_color);
+	}
 	img.save("round_chart.bmp");                             // ──//──                                      // ──//──
 }
