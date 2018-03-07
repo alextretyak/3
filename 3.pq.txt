@@ -256,7 +256,7 @@ T DLList[T Type(DLListItem)] // Type(DLListItem) means that Type must be derived
          p = n // move(n) is not needed here as the compiler put `move` automatically at all places of last use of variable
       last = N
 
-   F append,[+]=(Type &item) // define both method `append()` and operator [+]=
+   F append, [+]=(Type &item) // define both method `append()` and operator [+]=
       item.prev = .last
       I .last {.last.next = item} E .first = item
       .last = item
@@ -314,7 +314,7 @@ T DLList[T Type(DLListItem)] // Type(DLListItem) means that Type must be derived
          п = с // перем(с) здесь не обязательно, так как компилятор вставляет `перем` автоматически в места последнего использования переменной
       последний = Н
 
-   Ф добавить,[+]=(Тип &эл) // объявляем как метод `append()`, так и оператор [+]= (может быть полезно для "локализованных" исходных файлов: F append,добавить ...)
+   Ф добавь, добавить, [+]=(Тип &эл) // также может быть полезно для "локализованных" исходных файлов: F append,добавить ...
       эл.пред = .последний
       Е .последний {.последний.след = эл} И .первый = эл
       .последний = эл
