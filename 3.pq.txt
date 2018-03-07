@@ -333,7 +333,7 @@ T DLList[T Type(DLListItem)] // Type(DLListItem) means that Type must be derived
       Ф пред(эл)
          Р эл.пред
 ’
-Код по рисованию диаграммы, определяющей оптимальное время публикации данной статьи: ‘сетевая часть’[-вставить ссылку (на github.com)] (на Python и новом языке программирования) и отображение[-вставить ссылку (на github.com)] (на C++ и новом языке программирования).
+Код по рисованию диаграммы, которая помогла мне определить оптимальное время для публикации данной статьи: ‘сетевая часть’[https://github.com/alextretyak/3/blob/master/round_chart/round_chart.py] (на Python и новом языке программирования) и отображение[https://github.com/alextretyak/3/blob/master/round_chart/round_chart.cpp] (на C++ и новом языке программирования).
 }
 [[[
 Опрос:
