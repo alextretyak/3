@@ -18,7 +18,7 @@ int main()
 	cimg_library::CImg<unsigned char> img(1024, 1024, 1, 3);  // A img = image:[3](1024, 1024)                           // А рис = изобр:[3](1024, 1024)
 	img.fill(255, 255, 255);                                  // img.fill((255, 255, 255))                               // рис.заполнить((255, 255, 255))
 	unsigned char black_color[3] = {0, 0, 0};
-	img.draw_circle(512, 512, 256, black_color, 1, 0);        // img.draw_circle((512, 512), 256, (0, 0, 0))             // рис.круг((512, 512), 256, (0, 0, 0))
+	img.draw_circle(512, 512, 256, black_color, 1, 0);        // img.draw_circle((512, 512), 256, (0, 0, 0))             // рис.окружность((512, 512), 256, (0, 0, 0))
 	for (int i=0; i<24; i++) {                                // L(i) 24                                                 // Ц(и) 24
 		struct float2 {float x, y;};
 		auto f = [](float i) {                                //    F f(i)                                               //    Ф ф(и)
