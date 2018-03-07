@@ -5,7 +5,7 @@
 int main()
 {
 	float data[24] = {10000};                                 // Float[24] data = [10'000] [+] Float[23](0)              // Дробн[24] данные = [10'000] [+] Дробн[23](0)
-	float max = *std::max_element(data, data+_countof(data)); // A max = a:max(data)                                     // А макс = а:макс(данные)
+	float max = *std::max_element(data, data+_countof(data)); // A max_el = max(data)                                    // А макс_эл = макс(данные)
 
 	/*
 	Выбрал 3 компоненты на пиксель, так как такая программа:
@@ -35,7 +35,7 @@ int main()
 		              (_itoa_s(i, t, 10), t), black_color);
 		float2 d1 = f((float)i),                              //    A d1 = f(i),
 		       d2 = f((float)i+1);                                    d2 = f(i+1)
-		float k = 1 + data[i]/max;                            //    A k = 1 + data[i]/max
+		float k = 1 + data[i]/max;                            //    A k = 1 + data[i]/max_el
 		img.draw_line(512 + int(d1.x*256),                    //    img.draw_line(512 + d1*256  , 512 + d1*256*k)        //    риc.линия(...)
 		              512 + int(d1.y*256),
 		   	          512 + int(d1.x*256*k),
