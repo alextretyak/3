@@ -1,10 +1,13 @@
 ﻿#include "CImg.h"
+#include <iostream>
 #define _USE_MATH_DEFINES
 #include <math.h>
 
 int main()
 {
-	float data[24] = {10000};                                 // Float[24] data = [10'000] [+] Float[23](0)              // Дробн[24] данные = [10'000] [+] Дробн[23](0)
+	float data[24];                                           // A data = []                                             // А данные = []
+	for (int i=0; i<_countof(data); i++)                      // L 24                                                    // Ц 24
+		std::cin >> data[i];                                  //    data [+]= input[Float]()                             //    данные [+]= ввод[Дробн]()
 	float max = *std::max_element(data, data+_countof(data)); // A max_el = max(data)                                    // А макс_эл = макс(данные)
 
 	/*
@@ -34,7 +37,7 @@ int main()
 		              512 + int(d.y*200),
 		              (_itoa_s(i, t, 10), t), black_color);
 		float2 d1 = f((float)i),                              //    A d1 = f(i),
-		       d2 = f((float)i+1);                                    d2 = f(i+1)
+		       d2 = f((float)i+1);                            //      d2 = f(i+1)
 		float k = 1 + data[i]/max;                            //    A k = 1 + data[i]/max_el
 		img.draw_line(512 + int(d1.x*256),                    //    img.draw_line(512 + d1*256  , 512 + d1*256*k)        //    риc.линия(...)
 		              512 + int(d1.y*256),
