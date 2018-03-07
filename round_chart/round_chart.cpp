@@ -18,16 +18,21 @@ int main()
 	cimg_library::CImg<unsigned char> img(1024, 1024, 1, 3);  // A img = image:[3](1024, 1024)                           // А рис = изобр:[3](1024, 1024)
 	img.fill(255, 255, 255);                                  // img.fill((255, 255, 255))                               // рис.заполнить((255, 255, 255))
 	unsigned char black_color[3] = {0, 0, 0};
-	img.draw_circle(512, 512, 256, black_color, 1, 0);        // img.draw_circle((512, 512), 256, (0, 0, 0))             // рис.нарисовать_круг((512, 512), 256, (0, 0, 0))
+	img.draw_circle(512, 512, 256, black_color, 1, 0);        // img.draw_circle((512, 512), 256, (0, 0, 0))             // рис.круг((512, 512), 256, (0, 0, 0))
 	for (int i=0; i<24; i++) {                                // L(i) 24                                                 // Ц(и) 24
 		float angle = float((i+0.5)*2*M_PI/24.0);             //    A angle = (i+0.5)*2*PI/24                            //    А угол = (и+0.5)*2*ПИ/24
 		float dirx = sin(angle),                              //    A dir = (sin(angle),                                 //    А напр = (син(угол),
 		      diry =-cos(angle);                              //            -cos(angle))                                 //              кос(угол))
 		char t[3];
-		img.draw_text(512 + int(dirx*200),                    //    img.draw_text(512 + dir*200, i)                      //    риc.отобразить_текст(512 + напр*200, и)
-			          512 + int(diry*200),
-					  (_itoa_s(i, t, 10), t), black_color);
+		img.draw_text(512 + int(dirx*200),                    //    img.draw_text(512 + dir*200, i)                      //    риc.текст(512 + напр*200, и)
+		              512 + int(diry*200),
+		              (_itoa_s(i, t, 10), t), black_color);
+		float k = 1 + data[i]/max;
+		img.draw_line(512 + int(dirx*256),                    // img.draw_line(512 + dir*256, 512 + dir*256*data[i]/max) //    риc.линия(512 + напр*256, 512 + напр*256*данные[i]/макс)
+		              512 + int(diry*256),
+		   	          512 + int(dirx*256*k),
+		              512 + int(diry*256*k), black_color);
 	}
 
-	img.save("round_chart.bmp");                              // img.save(‘round_chart.bmp’)                          // рис.сохрани(‘round_chart.bmp’)
+	img.save("round_chart.bmp");                              // img.save(‘round_chart.bmp’)                             // рис.сохрани(‘round_chart.bmp’)
 }
