@@ -25,7 +25,7 @@
 (Попробуйте угадать значения зарезервированных букв, а также мысленно переписать этот кусочек кода на [[[вашем любимом языке]]]языках программирования, которые вы знаете.)
 '‘<cut />’'
 А вот пример побольше (это перевод Python-кода из ‘моей предыдущей статьи’[https://habrahabr.ru/post/349592/]).
-‘Код’{
+‘Код, использующий [зарезервированные] буквы’{
 #(11l)‘
 F calculate_sacred_number()
    A results = []
@@ -70,6 +70,52 @@ L(tens) "twenty thirty forty fifty sixty seventy eighty ninety".split()
 
 print(calculate_sacred_number())
 ’
+}
+‘Код, использующий [зарезервированные] слова’{
+#(11l)‘
+fn calculate_sacred_number()
+   var results = []
+
+   loop(hash_algorithm) hashlib:algorithms_available // Обходим все доступные хэш-алгоритмы
+                                                     \\ (список включает в себя MD5, SHA...)
+      if.unlikely "shake" in hash_algorithm // Пропускаем алгоритмы SHAKE, так как ...
+         loop.continue
+      loop(uppercase) 0B..1B // Проверяем варианты написания как строчными, так и ПРОПИСНЫМИ
+         loop(space)  0B..1B // Проверяем варианты написания с дефисом и через пробел
+            loop(n)   10..99 // Проверяем все двузначные числа
+               var nw = :numbers[n] // Получаем текущее число, записанное словами на англ.
+               if uppercase
+                  nw .= upper()
+               if space
+                  nw .= replace(‘-’, ‘ ’)
+               var ns = String(n)
+               // Считаем хэш от записанного словами числа,
+               var digest1 = hashlib:(hash_algorithm, nw.encode()).hexdigest()
+               // а также от этого же числа, преобразованного в строку.
+               var digest2 = hashlib:(hash_algorithm, ns.encode()).hexdigest()
+               loop 2 // Проверяем целый хэш, а также первую половину хэша
+                  // Оба хэша должны начинаться на первую цифру текущего числа
+                  // и заканчиваться на вторую цифру.
+                  if digest1[0] == ns[0] & digest1[@-1] == ns[1]
+                   & digest2[0] == ns[0] & digest2[@-1] == ns[1]
+                     results [+]= ns
+                  // Берём первую половину хэша
+                  digest1 = digest1[0.<@/2]
+                  digest2 = digest2[0.<@/2]
+
+   assert(results.len == 1) // Должно быть только одно "выигравшее" число
+   return results[0]        // Возвращаем это число
+
+// Based on [https://stackoverflow.com/a/8982279/2692494 ‘How do I tell Python to convert integers into words’]
+var numbers = "zero one two three four five six seven eight nine".split()
+numbers [+]= "ten eleven twelve thirteen fourteen fifteen sixteen".split()
+numbers [+]= "seventeen eighteen nineteen".split()
+loop(tens) "twenty thirty forty fifty sixty seventy eighty ninety".split()
+   loop(ones) numbers[0..9]
+      numbers [+]= if ones == "zero" {tens} else tens‘-’ones
+
+print(calculate_sacred_number())
+’
 
 Как можно заметить, импорт модулей осуществляется неявно — можно просто обращаться к нужной функции пиша `имя_модуля:имя_функции(...)`. То есть, простое обращение к `fs:path:dirname()`, `re:compile()`\`рв:компил()`, `math:log()`\`матем:лог()`, `time:sleep()`\`время:спи()`, `json:load()`, `html:escape()` автоматически импортирует все необходимые модули (`fs`, `fs:path`\`фс:путь`, `re`, `math`, `time`, `json`, `html`).
 
@@ -80,7 +126,7 @@ print(calculate_sacred_number())
 ‘Язык поддерживает всего 11/12/13 [[[корневых[[[/главных]]]/]]]базовых зарезервированных букв/слов:’{
 Т‘
 Н‘‘Буквы’ -  ‘Слова’  -           ‘Пояснение’’
-‘‘A’  -   -           -           ‘автоматический тип (аналог `auto` из C++11)’’
+‘‘A’  -  ‘var’       ‘перем’      ‘объявление переменной автоматического тип (аналог `auto` из C++11)’’
 ‘‘C’  -  ‘in’        ‘С’          ‘contained in\содержится в’’
 ‘‘I’ ‘Е’ ‘if’        ‘если’       ‘’’
 ‘‘E’ ‘И’ ‘else’      ‘иначе’      ‘’’
