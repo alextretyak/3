@@ -85,8 +85,8 @@ F calculate_sacred_number()
                    & digest2[0] == ns[0] & digest2[@-1] == ns[1]
                      results [+]= ns
                   // Берём первую половину хэша
-                  digest1 = digest1[0.<@/2]
-                  digest2 = digest2[0.<@/2]
+                  digest1 = digest1[0 .< @ I/ 2]
+                  digest2 = digest2[0 .< @ I/ 2]
 
    assert(results.len == 1) // Должно быть только одно "выигравшее" число
    R results[0]             // Возвращаем это число
@@ -131,8 +131,8 @@ fn calculate_sacred_number()
                    & digest2[0] == ns[0] & digest2[@-1] == ns[1]
                      results [+]= ns
                   // Берём первую половину хэша
-                  digest1 = digest1[0.<@/2]
-                  digest2 = digest2[0.<@/2]
+                  digest1 = digest1[0 .< @ I/ 2]
+                  digest2 = digest2[0 .< @ I/ 2]
 
    assert(results.len == 1) // Должно быть только одно "выигравшее" число
    return results[0]        // Возвращаем это число
