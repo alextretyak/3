@@ -166,7 +166,7 @@ print(calculate_sacred_number())
 ‘‘L’ ‘Ц/П’ ‘loop’    ‘цикл/повтор/пока’ ‘замена for, while и do-while’’
 ‘‘N’ ‘Н’ ‘null’      ‘нуль’       ‘’’
 ‘‘R’ ‘Р’ ‘return’    ‘вернуть’    ‘вернуть *‘р’езультат функции’’
-‘‘S’ ‘В’ ‘switch’    ‘выбор’      ‘switch/select’’
+‘‘S’ ‘В’ ‘switch’    ‘выбрать’    ‘switch/select’’
 ‘‘T’  -  ‘type’      ‘тип’        ‘объявление нового типа’’
 ‘‘T()’-  ‘typeof’    ‘тип()’      ‘получить тип выражения (‘typeof в GCC’[https://gcc.gnu.org/onlinedocs/gcc/Typeof.html], ‘decltype в C++11’[http://en.cppreference.com/w/cpp/language/decltype])’’
 ‘‘X’  -   -           -           ‘для дополнительных зарезервированных подслов’’
