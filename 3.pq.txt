@@ -200,7 +200,12 @@ L.prev\Ц.пред — предыдущее значение переменно�
 ’’
 ‘‘S’ ‘S.break
 S.fallthrough’’
-‘‘T’ ‘T.base[[[как в C#]]]\Т.базовый — для доступа к базовому типу
+‘‘T’ ‘T.base[[[как в C#; кроме того:
+>[https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/ <- https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/types/ <- google:‘встроенные типы данных’ <- google:‘base type’]:‘H‘Built-in Types’
+...
+H‘Custom Types’
+You use the struct, class, interface, and enum constructs to create your own custom types.’
+В 11l просто T/type означает struct/class, а T.interface и T.enum — соответственно interface и enum из C#.]]]\Т.базовый — для доступа к базовому типу
 T.enum\Т.перечисл — объявление перечисления’’
 ’
 }
