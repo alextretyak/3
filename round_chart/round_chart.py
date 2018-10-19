@@ -10,7 +10,7 @@ for i in range(1, 101):                                                    # L(i
     i = 0                                                                  #    A i = 0
     while True:                                                            #    L
         i = html.find('<span class="post__time">', i)                      #       i = html.find(‘<span class="post__time">’, i)
-        if i == -1:                                                        #       I i != N
+        if i == -1:                                                        #       I i == N
             break                                                          #          L.break
         i = html.find('</span>', i)
         time = html[:i][-5:]
