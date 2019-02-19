@@ -201,11 +201,20 @@ L.prev\Ц.пред — предыдущее значение переменно�
 ‘‘S’ ‘S.break
 S.fallthrough’’
 ‘‘T’ ‘T.base[[[как в C#; кроме того:
->[https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/ <- https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/types/ <- google:‘встроенные типы данных’ <- google:‘base type’]:‘H‘Built-in Types’
+1.‘>[https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/ <- https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/types/ <- google:‘встроенные типы данных’ <- google:‘base type’]:‘
+H‘Built-in Types’
+
 ...
+
 H‘Custom Types’
+
 You use the struct, class, interface, and enum constructs to create your own custom types.’
-В 11l просто T/type означает struct/class, а T.interface и T.enum — соответственно interface и enum из C#.]]]\Т.базовый — для доступа к базовому типу
+В 11l просто T/type означает struct/class, а T.interface и T.enum — соответственно interface и enum из C#.’
+2.‘Почему type более удачное ключевое слово, чем class:
+>[https://en.cppreference.com/w/cpp/language/classes]:‘
+A class is a user-defined type.’
+>[http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4750.pdf]:‘
+A class is a type.’’]]]\Т.базовый — для доступа к базовому типу
 T.enum\Т.перечисл — объявление перечисления’’
 ’
 }
