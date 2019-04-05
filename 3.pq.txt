@@ -265,8 +265,8 @@ for root, dirs, files in os.walk(path):
 
 Задумывались ли вы над тем, что флаги открытия файла можно не указывать явно, а выводить из его использования?
 #(11l)‘
-A fstr = File(fname).read()  //  А фстр = Файл(имя).прочти()
-File(fname).write(contents)  //  Файл(имя).запиши(содержимое)
+A fstr = File(fname).read()  //  А фстр = Файл(имя).прочесть()
+File(fname).write(contents)  //  Файл(имя).записать(содержимое)
 
 I File(fname)    // заменяется компилятором на I fs:file_exists(fname)
 File(fname).size // заменяется компилятором на fs:stat(fname).size
