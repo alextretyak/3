@@ -273,7 +273,7 @@ a2 = a1;
 A fstr = File(fname).read()  //  А фстр = Файл(имя).прочесть()
 File(fname).write(contents)  //  Файл(имя).записать(содержимое)
 
-I File(fname)    // заменяется компилятором на I fs:file_exists(fname)
+I File(fname)    // заменяется компилятором на I fs:is_file(fname)
 File(fname).size // заменяется компилятором на fs:stat(fname).size
 ’
 [[[
