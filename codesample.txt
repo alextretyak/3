@@ -1,0 +1,8 @@
+L
+   S instr[i]
+      "["
+         nesting_level++
+      "]"
+         I --nesting_level == 0
+            L.break
+   i++
