@@ -285,7 +285,7 @@ File(fname).size // заменяется компилятором на fs:stat(f
          link = link[0.<spacepos]
       I link.len > 57
          link = link[0..(link.rfind(‘/’, 47) ?? -1)+1]‘...’
-      write_http_link(i, i, 0, linkn‘<i>’link‘</i>’)’(Этот код основан на ‘7 строках из pqmarkup.py’[https://bitbucket.org/pqmarkup/pqmarkup/src/0d0354719b0f9f02a7d746ca695e32981b7e8e95/pqmarkup.py#pqmarkup.py-302].)
+      write_http_link(i, i, 0, linkn‘<i>’link‘</i>’)’(Этот код основан на ‘7 строках из pqmarkup.py’[https://sourceforge.net/p/pqmarkup/code/ci/0d0354719b0f9f02a7d746ca695e32981b7e8e95/tree/pqmarkup.py#l302 <- https://bitbucket.org/pqmarkup/pqmarkup/src/0d0354719b0f9f02a7d746ca695e32981b7e8e95/pqmarkup.py#pqmarkup.py-302].)
 А если где-то в коде изменяется значение переменной `link`, то её тип устанавливается компилятором как Строка\String.
 Также обратите внимание, что использование типа Подстрока\Substring в данном примере возможно благодаря тому, что `instr` — константный аргумент функции (а по умолчанию все аргументы функции целесообразно считать константными).
 
