@@ -214,7 +214,9 @@ You use the struct, class, interface, and enum constructs to create your own cus
 >[https://en.cppreference.com/w/cpp/language/classes]:‘
 A class is a user-defined type.’
 >[http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/n4750.pdf]:‘
-A class is a type.’’]]]\Т.базовый — для доступа к базовому типу
+A class is a type.’
+И Вирт с этим согласен:
+>[http://www.osp.ru/os/1996/06/179017/]:‘мы остаемся верными термину "тип", избегая слова "класс"’’]]]\Т.базовый — для доступа к базовому типу
 T.enum\Т.перечисл — объявление перечисления’’
 ’
 }
